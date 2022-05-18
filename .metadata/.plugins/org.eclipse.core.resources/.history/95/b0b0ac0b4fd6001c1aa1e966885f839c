@@ -1,0 +1,23 @@
+package com.assignment;
+import java.util.Scanner;
+
+public class PrimeFactorial {
+
+		static void number(int num) {
+		
+		}
+		
+		public static void main(String[] args) {
+			Scanner s = new Scanner(System.in);
+			System.out.println("Enter Number in the range 2 to 100");
+			
+			 int number = s.nextInt();
+			 if(number>2 && number <100)
+				 number(number);
+			 else
+			 System.out.println("Invalid number");
+		}
+		
+		
+	}
+
