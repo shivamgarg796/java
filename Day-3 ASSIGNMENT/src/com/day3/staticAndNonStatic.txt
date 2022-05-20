@@ -1,0 +1,51 @@
+Static variable	
+
+#Static variables can be accessed using class name	
+#Static variables can be accessed by static and non static methods	
+#Static variables reduce the amount of memory used by a program.
+#Static variables are shared among all instances of a class.
+#Static variable is like a global variable and is available to all methods.	
+
+example of static variable:--
+
+package com.masai;
+public class Student{
+
+ static int a=5;
+
+static void print(){
+ 	System.out.println(a);
+	}
+
+public static void main(String[] args){
+	Student.print();	
+}
+}
+
+
+
+
+Non static variable
+
+#Non static variables can be accessed using instance of a class
+#Non static variables cannot be accessed inside a static method.
+#Non static variables do not reduce the amount of memory used by a program.
+#Non static variables are specific to that instance of a class.
+#Non static variable is like a local variable and they can be accessed through only instance of a class.
+
+example of non-static variable:--
+
+package com.masai;
+public class Student{
+
+ int a=5;
+
+public void print(){
+ 	System.out.println(a);
+	}
+
+public static void main(String[] args){
+	Student s=new Student();	
+	s.print();	
+}
+}
