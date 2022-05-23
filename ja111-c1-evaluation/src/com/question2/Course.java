@@ -1,5 +1,5 @@
 //Question 2 
-package com.evaluationc1;
+package com.question2;
 import java.util.Scanner;
 
 public class Course {
