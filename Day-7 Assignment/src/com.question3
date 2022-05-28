@@ -1,0 +1,20 @@
+THIS KEYWORD:----
+
+this keyword mainly represents the current instance of a class.	
+
+this keyword used to call default constructor of the same class.	
+
+this keyword used to access methods of the current class as it has reference of current class.	
+
+this keyword can be referred from static context i.e can be invoked from static instance. For instance we can write System.out.println(this.x) which will print value of x without any compilation or runtime error.	
+
+
+SUPER KEYWORD:----
+
+super keyword represents the current instance of a parent class.
+
+super keyword used to call default constructor of the parent class.
+
+One can access the method of parent class with the help of super keyword.
+
+On other hand super keyword can't be referred from static context i.e can't be invoked from static instance. For instance we cannot write System.out.println(super.x) this will leads to compile time error.
