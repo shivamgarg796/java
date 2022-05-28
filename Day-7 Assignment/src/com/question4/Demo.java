@@ -33,6 +33,11 @@ public class Demo {
 		String name=sc.next();
 		Bank b1=getBank(name);
 		b1.displayDetails();
+		
+		if(b1 instanceof AxisBank) {
+			AxisBank a2 = (AxisBank)b1;
+			a2.getCreditCard();
+		}
 			
 		
 		
