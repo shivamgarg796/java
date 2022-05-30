@@ -1,0 +1,48 @@
+Difference between IS-A and Has-A relationship
+
+Answer:-IS-A relationship is achived by created  by an object of childclass.
+
+#reference to inheritance or implementation.
+
+#expressed using keyword extend
+
+example:-Class A extends B
+A a = new B().
+
+HAS-A
+
+#HAS-A relationship is accesed by declaring by an instance variable of object type in any other class.
+
+#there is no specific keyword to represent HAS-A relationship but mostly we are dependent on new keyword.
+
+#main advantage by of Has-A relationship to access any class by declaring an instace.
+
+#example:-
+
+class A{
+
+ int x=10;
+ B b;
+
+}
+
+class B{
+
+}  
+
+ACCESS MODIFIER:
+
+#public :-the scope of this modifier if we can declare any class ,method ,variables as public then we can access these members from 
+everyehere means that with in the class or outside the package also.
+
+#private:-the scope of this modifier if we can declare any class ,method ,variables as private then we can access these members in the  
+class only not outside the package .
+
+#protected:-the scope of this modifier if we can declare any class ,method ,variables as protected then we can access these members in the  
+class or with in the package only and if we want to acess this class member outside the class or outside the package yes it is possible the both
+classes are in Is-A relationship is mandatory.
+
+#default:-the scope of this modifier if we can not declare any class ,method ,variables as private ,public and protected  then it will 
+considered as a default.we can access these members in the class or with in the package only.
+
+ 
