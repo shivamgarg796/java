@@ -1,31 +1,55 @@
 package com.question2;
 import java.util.Scanner;
+
 public class Demo {
 
 	public static void main(String[] args) {
+		
 		Scanner sc=new Scanner(System.in);
 		System.out.println("How many students objects to be created :");
 		int num=sc.nextInt();
 		
 		Student[] std=new Student[num];
 		for(int i=0;i<std.length;i++) {
+			System.out.println("Enter Student "+(i+1)+"Details");
+			System.out.println("===========================");
+
+			
 			System.out.println("Enter the roll number");
-			int rol=sc.nextInt();
-			std[i].setRoll(rol);
+			int roll=sc.nextInt();
 			
 			System.out.println("Enter the name");
-			String nam=sc.next();
-			std[i].setName(nam);
+			String name=sc.next();
 			
 			System.out.println("Enter the address");
-			String addres=sc.next();
-			std[i].setAddress(addres);
+			String address=sc.next();
 			
-			System.out.println("Enter the roll number");
-			int mark=sc.nextInt();
-			std[i].setMarks(mark);
+			System.out.println("Enter the marks");
+			int marks=sc.nextInt();
+			System.out.println("===========================");
+
+			std[i]=new Student();
+			std[i].setRoll(roll);
+			std[i].setName(name);
+			std[i].setAddress(address);
+			std[i].setMarks(marks);
 			
-			std[i].printDetail();
+		}
+		for(int i=0;i<std.length;i++) {
+			System.out.println("===========================");
+			System.out.println("Student "+(i+1)+"Details");
+			
+			System.out.println("Roll number :"+std[i].getRoll());
+		
+			System.out.println("Name :"+std[i].getName());
+			
+			System.out.println("Address :"+std[i].getAddress());
+			
+			System.out.println("Marks :"+std[i].getMarks());
+			
+			System.out.println("===========================");
+
+			
 		}
 		
 	

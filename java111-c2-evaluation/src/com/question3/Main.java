@@ -16,7 +16,7 @@ public class Main {
 		
 		int res = myOla.calculateBill(myCar);
 
-		System.out.println("The total fare amount is"+ res);
+		System.out.println("The total fare amount is "+ res);
 
 	}
 

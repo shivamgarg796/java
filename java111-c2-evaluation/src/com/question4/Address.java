@@ -8,5 +8,12 @@ public class Address {
 	
 	 String pinCode;
 	 
-	 Person p1;
+	 Address(String city, String state, String pinCode ){
+		 this.city = city;
+		 this.state = state;
+		 this.pinCode = pinCode;
+		 }
+	 
+	 
+	 
 }

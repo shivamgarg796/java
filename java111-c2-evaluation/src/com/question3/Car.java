@@ -15,7 +15,7 @@ public class Car {
 	public void setNumberOfKms(int numberOfKms) {
 		this.numberOfKms=numberOfKms;
 	}
-	public int getNumberOfKms(int numberOfKms) {
+	public int getNumberOfKms() {
 		return numberOfKms;
 	}
 }

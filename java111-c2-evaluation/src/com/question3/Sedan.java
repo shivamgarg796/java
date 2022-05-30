@@ -7,4 +7,5 @@ public class Sedan extends Car {
 	public int getFare() {
 		return farePerKm;
 	}
+	
 }
