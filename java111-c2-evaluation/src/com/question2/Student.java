@@ -35,13 +35,13 @@ public class Student {
 		return marks;
 	}
 	
-	public void printDetail() {
-		System.out.println("Roll No of Student"+getRoll());
-		
-		System.out.println("Name of Student"+getName());
-		
-		System.out.println("Address of Student"+getAddress());
-		
-		System.out.println("Marks of Student"+getMarks());
-	}
+//	public void printDetail() {
+//		System.out.println("Roll No of Student"+getRoll());
+//		
+//		System.out.println("Name of Student"+getName());
+//		
+//		System.out.println("Address of Student"+getAddress());
+//		
+//		System.out.println("Marks of Student"+getMarks());
+//	}
 }

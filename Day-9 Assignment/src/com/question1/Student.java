@@ -60,21 +60,28 @@ public class Student {
 	
 	@Override
 	public String toString() {
-		return roll+"="+name+"="+marks;
+		return "Roll no"+"="+roll+" "+"Name"+"="+name+" "+"Marks"+"="+"="+marks+" "+"Grade"+"="+grade;
 	}
 	
 	private char calculateGrade(int mark) {
 		
-		if( mark >= 500) 
-		return 'A';
+		if( mark >= 500) {
+			
+			setGrade('A');
+		}
 		
 		
-		else if (mark < 500 && mark >= 400 )
-		return 'B';
+		else if (mark < 500 && mark >= 400 ) {
+			
+			setGrade('B');
+		}
 		
 			
-		else if(mark <400)
-		return 'C';
+		else if(mark <400) {
+			
+			setGrade('C');
+		}
+		return getGrade();
 		
 	}
 }
