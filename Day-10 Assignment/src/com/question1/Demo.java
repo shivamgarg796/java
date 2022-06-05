@@ -4,33 +4,31 @@ import java.util.Scanner;
 public class Demo {
 	
 	public Hotel provideFood(int amount) {
-		if (amount>1000) {
-			TajHotel t1=new TajHotel();
-			t1.chickenBiryani();
-			t1.masalaDosa();
-			t1.welcomeDrink();
-			return t1;
+
+		if(amount > 1000)
+			return new TajHotel();
+		else if(amount > 200 && amount <= 1000)
+			return new RoadSideHotel();
+		else
+			return null;
 		}
-		else{
-			RoadSideHotel rsh=new RoadSideHotel();
-			rsh.chickenBiryani();
-			rsh.masalaDosa();
-			return rsh;
-		}
-	}
 	
 
 	public static void main(String[] args) {
 		Scanner s=new Scanner(System.in);
 		System.out.println("Enter a Valid Amount");
 		int amt=s.nextInt();
-		
-		if (amt<200)
-			System.out.println("Please Enter a Valid Amount");
-		else {
 			Demo d1=new Demo();
-		    d1.provideFood(amt);
+		    Hotel hotel=d1.provideFood(amt);
+		    if(hotel!=null) {
+		    hotel.chickenBiryani();
+		    hotel.masalaDosa();
+		    if(hotel instanceof TajHotel) {
+		    	TajHotel taj=(TajHotel)hotel;
+		    	taj.welcomeDrink();
+		    }
+		    }
+		    else
+		    	System.out.println("Amount should be greater than 200");
 		}
-	}
-
 }
