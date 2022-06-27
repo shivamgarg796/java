@@ -1,0 +1,142 @@
+Q.1)Make a thread that will calculate a product of 10 digits and another thread (main thread ) will print the calculated value of the
+ first thread.
+Answer 1:-
+
+package com.question1;
+public class A implements Runnable{
+
+    long product=1;
+    @Override
+    public void run() {
+        for (int i = 1; i < 10; i++) {
+            System.out.println("inside A thread");
+            product = product * i;
+        }
+    }
+}
+
+class Main {
+    public static void main(String[] args){
+        A a1 = new A();
+        Thread t = new Thread(a1);
+        t.start();
+        try {
+            t.join();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+            long result = a1.product;
+            System.out.println("inside main thread....");
+            System.out.println(result);
+        }
+    }
+
+Q.2)What is a race condition? How will you find and solve race condition show with proper running code ?
+Answer 2:-
+
+A race-condition is a condition in which the critical section (a part of the program where shared memory is accessed)
+is concurrently executed by two or more threads. It leads to incorrect behavior of a program.
+
+For example, if thread A is reading data from the linked list and another thread B is trying to delete the same data.
+This process leads to a race condition that may result in run time error.
+To solve the data inconsistency problem in java synchronized keyword is used.
+So the thread-safety is achieved and race condition is avoided by the help of synchronized keyword.
+
+example:-
+public class Common{
+    public void synchronized fun1(Stirng name){
+        System.out.print("Welcome");
+    try{
+        Thread.sleep(1000);
+        }
+    catch(Exception ee){
+        }
+         System.out.println(name);
+}
+
+class ThreadA extends Thread{
+    Common c;
+    String name;
+        public ThreadA(Common c,String name) {
+        this.c=c;
+        this.name=name;
+     }
+        @Override
+        public void run() {
+        c.fun1(name);
+    }
+}
+
+class ThreadB extends Thread{
+    Common c;
+    String name;
+        public ThreadB(Common c,String name) {
+        this.c=c;
+        this.name=name;
+    }
+        @Override
+        public void run() {
+        c.fun1(name);
+    }
+}
+
+class Main{
+        public static void main(String[] args){
+        Common c=new Common();
+
+    ThreadA t1=new ThreadA(c,"Ram");
+    ThreadB t2=new ThreadB(c,"Shyam");
+
+        t1.start();
+        t2.start();
+    }
+}
+
+Q.3)Write the fun1() method of Common class using synchronised block to get the Class level lock.
+Answer 3.
+
+ public void fun1(Stirng name){
+
+ synchronized(Common.class){
+        System.out.print("Welcome");
+    try{
+        Thread.sleep(1000);
+        }
+    catch(Exception ee){
+        }
+         System.out.println(name);
+}
+
+Q.4)Explain wait(), notify(),notifyAll() how they are used for inter thread communication.
+Answer. 4
+1. wait() Method
+
+In multithreading two threads can communicate Inter-thread communication with each other by using the wait() method. The thread
+which is expecting updation is responsible to call the wait() method and then immediately the thread will enter into the
+waiting state. The wait() method is present in java.lang.Object class not in Thread class because the thread can call this
+method on any java object. To call wait() method any java object the thread should be the owner of that object i.e, the thread
+should have lock of that object i.e, the thread should be inside the synchronized area. Hence, we can call the wait() method
+only from the synchronized area otherwise we will get RuntimeException saying  IllegalMonitorStateException. If a thread call
+wait() method on any object it immediately releases the lock of that particular object and enters in waiting state.
+
+2.notify() Method
+notify(): The notify() method is defined in the Object class, which is Java’s top-level class. It’s used to wake up only one
+thread that’s waiting for an object, and that thread then begins execution. The thread class notify() method is used to wake
+up a single thread.
+
+3. notifyAll() Method
+Likewise of wait(), method notifyAll() method is used in inter-thread communication . The thread is responsible to perform
+updating  and after performing some updating it is responsible to call notifyAll() method then the waiting thread will get
+that notification and continue its execution with updated items. notifyAll() is also present in java.lang .Object class.
+To call notifyAll() method on any object they should be the owner of that object i.e, the thread should be inside synchronized
+area. Hence, we can call notifyAll() method only from the synchronized area otherwise we will get RuntimeException saying
+IllegalMonitorStateExceptiom.
+
+Two synchronized thread can communicate each other by using some methods present in Object class, those methods are wait(),
+notify(), notifyAll().Whenever we need to suspend a synchronized thread unconditionally then we use wait() method.Whenever
+we need to resume a suspended(waiting) thread then we use notify() method.this is known as thread-synchronization or inter-thread
+communication.In the inter-thread communication the thread which require updation it has to call wait() method.
+The thread which performing updation it will call notify() method, so that waiting thread will gets the notification and it
+continues its execution with those updation.
+

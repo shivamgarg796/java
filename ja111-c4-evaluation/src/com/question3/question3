@@ -1,0 +1,50 @@
+An Unwanted event occured at during the execution of the progragram is known as Exception.
+
+Exception is of two types :-
+
+Checked Exception :-
+# Checked exception occurs at compile time.
+# compiler checked the checked exceptions.
+# checked exceptions can be handled at compile time.
+# checked exceptions are directly child of exception class.
+# example:-FileNotFoundException,ClassNotFoundExceptions.
+
+
+package com.masai
+
+public class MyException extends Exception{
+	public MyException(message){
+	super(message);
+}
+
+Unchecked Exceptions:-
+# Unchecked exception occurs at run time.
+# compiler doesn't checked the checked exceptions.it ignores that.
+# Unchecked exceptions can not be handled at compile time.because they generate by logical mistakes in the program.
+# Unchecked exceptions are directly child of RunTimeException class.
+#example:-NullPointer Exceptions, Arithmetic Exceptions, ArrayIndexOutOfBoundExceptions.
+
+package com.masai
+
+public class MyException extends RunTimeException{
+	public MyException(message){
+	super(message);
+}
+
+Throw:-
+The throw keyword in java is used to throw an exception explicitly.
+we can throw either checked or unchecked exception in java by throw keyword.
+with the use of throw we can define our object which is thrown.
+
+syntax:-
+
+throw new exceptionclass("error");
+
+Throws:-
+The java throws keyword is used to declare with the method signature .
+it gives information to the programmer that this method may or may be occur exception.
+
+syntax:-
+
+void getValue() throws ArithmeticException.
+
