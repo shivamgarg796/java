@@ -1,0 +1,22 @@
+Transient keyword :
+
+Transient is a variables modifier used in serialization. At the time of serialization, if we don’t want to save value of a particular variable 
+in a file, then we use transient keyword. When JVM comes across transient keyword, it ignores original value of the variable and save default 
+value of that variable data type.
+
+Practically we serialized only those fields which represent a state of instance, after all serialization is all about to save state of an object
+ to a file. It is good habit to use transient keyword with private confidential fields of a class during serialization.
+ 
+ 
+ FOR EXAMPLE:--
+ 
+ class Test implements Serializable
+{
+    private transient String password;
+ 
+    transient int age;
+  
+    private String username, email;
+    Date dob;
+  
+}

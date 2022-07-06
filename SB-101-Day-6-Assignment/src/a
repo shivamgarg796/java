@@ -1,0 +1,86 @@
+question 1:
+
+create table Faculty(Facultyid int,Name varchar(12),Department varchar(30), Gender varchar(10),salary int,working_hours int);
+insert into faculty values(001, 'Aakash', 'CS', 'M', 50000, 45);
+insert into faculty values(002, 'Sahil',  'EC', 'M', 25000, 50);
+insert into faculty values(003, 'John',   'HSS','M', 100000, 60);
+insert into faculty values(004, 'Shelley','CS', 'F', 75000, 80);
+insert into faculty values(005, 'Anannya','CS', 'F', 45000, 100); 
+insert into faculty values(006, 'Sia',    'HSS','F', 60000, 40);
+
+UPDATE faculty
+SET department = CASE WHEN department = 'CS' THEN 'Computer Science' 
+                      WHEN department = 'EC' THEN 'Electronics and Communication'
+                      WHEN department = 'HSS' THEN 'Humanities and Social Sciences'
+                 END;
+SELECT * FROM FACULTY;
+
+
+question 2:
+alter table faculty add vacation_hours varchar(30);
+UPDATE faculty
+SET vacation_hours = CASE WHEN working_hours <=50 THEN 'not allowed' 
+                          WHEN working_hours <=80  THEN '20'
+                          WHEN working_hours <=120 THEN '40'
+                      END;
+SELECT * FROM FACULTY;
+
+
+
+question 3:
+PRIMARY KEY:
+
+A primary key is a field in a table which uniquely identifies each row/record in a database table. Primary keys must contain unique values. 
+A primary key column cannot have NULL values.
+
+CANDIDATE KEY:
+A candidate key is a subset of a super key set where the key which contains no redundant attribute is none other than a Candidate Key.
+
+PRIME ATTRIBUTES
+Attributes of the database tables which are candidate keys of the database tables are called prime attributes.
+
+NON PRIMEATTRIBUTES
+Attributes of the database tables which do not exist in any of the possible candidate keys of the database tables are called non-prime attributes.
+
+
+question 4:
+
+create table student
+(
+student_id int(10) primary key,
+name varchar(15),
+address varchar(15));
+);
+
+insert into student values(1,'Ram','delhi');
+insert into student values(2,'Ramesh','Agra');
+insert into student values(3,'Ravi','Hyd');
+insert into student values(4,'suresh','gaya');
+insert into student values(5,'amit','kanpur'); 
+
+create table marks
+(
+marks_id int primary key,
+subject varchar(20),
+score int,
+student_id int,
+Foreign key(student_id) references student(student_id));
+
+insert into marks values(101, 'ENG', 200,1);
+insert into marks values(102, 'MAT', 300,5); 
+insert into marks values(105, 'HIN', 150,4);
+insert into marks values(106, 'GK', 450,5);
+insert into marks values(108, 'GK', 450,1);
+
+create table student_marks
+(
+student_id int,
+marks_id int,
+foreign key(student_id) references student(student_id),
+foreign key(marks_id) references marks(marks_id)
+);
+
+select sum(score) from marks group by score; 
+
+
+	

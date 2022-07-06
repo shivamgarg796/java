@@ -1,0 +1,4 @@
+Wait() :--wait() method is used to if one thread t1 is calling wait()  another thread t2 till wait till t1 completes his execution for particular period of time.
+
+
+notify():--we can use notify() method to give the notifications only for waiting thread.which thread can notify we can't expect it is done by Jvm.

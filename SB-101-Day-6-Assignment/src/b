@@ -1,0 +1,47 @@
+question 1:
+
+create table employee(EmpId int primary key, EmpFname varchar(15), EmpLname varchar(15), Department varchar(15), Project varchar(5), 
+Adddress varchar(15),DOB DATE, gender varchar(5),salary int);
+
+insert into employee values(1, 'Sanjay', 'Mehra',    'HR',          'P1', 'Hyderabad(HYD)',   '1976-12-01', 'M', 50000);
+insert into employee values(2, 'Ananya', 'Mishra',   'Admin',       'P2', 'Delhi(DEL )',    '1968/05/02', 'F', 75000);
+insert into employee values(3, 'Rohan',  'Diwan',    'Account',     'P1', 'Mumbai(BOM)',    '1980/01/01', 'M', 90000);
+insert into employee values(4, 'Sonia',  'Kulkarni', 'HR',          'P3', 'Hyderabad(HYD)', '1992/05/02', 'F', 50000);
+insert into employee values(5, 'Priya',  'Thakur',   'Development', 'P2', 'Bangalore ',     '1992/02/23', 'F', 100000);
+
+select * from employee where Department='hr';  
+select count(gender) NumberOfFemaleEmployees  from employee where gender='f'; 
+select * from employee where gender='f' AND department='hr'; 
+select EmpFname,EmpLname from employee where EmpFname REGEXP '^[aeiou]'; 
+select * from employee where EmpFname  regexp '^[a-z][aeiou]' and gender='m';
+SELECT DEPARTMENT FROM EMPLOYEE GROUP BY DEPARTMENT;
+SELECT * FROM EMPLOYEE WHERE SALARY < 75000 AND GENDER ='F'; 
+SELECT COUNT(*) from employee where salary>50000 AND SALARY<100000;
+SELECT COUNT(DISTINCT PROJECT) AS COUNT FROM EMPLOYEE; 
+SELECT department,COUNT(*) as employees FROM EMPLOYEE GROUP BY department; 
+
+
+
+
+question 2:
+
+part 1: What is the difference between a Unique Key and Primary Key?
+Answer:
+
+Primary Key	Unique identifier for rows of a table.	
+Primary Key Cannot be NULL.
+Only one primary key can be present in a table	
+Primary Key present in a table	
+Selection using primary key creates clustered index	Selection 
+
+Unique Key Unique identifier for rows of a table when primary key is not present.
+Unique Key Can be NULL.
+Multiple Unique Keys can be present in a table.
+Unique Key present in a table.
+using unique key creates non-clustered index.
+
+part 2:SQL is a case-sensitive language. (True or False)
+Answer :
+
+No. MySQL is not case sensitive, and neither is the SQL standard. It's just common practice to write the commands upper-case. 
+Now, if you are talking about table/column names, then yes they are, but not the commands themselves.

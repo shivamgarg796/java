@@ -1,0 +1,25 @@
+Briefly explain what a transaction is along with the ACID properties.
+Answer:-
+ 
+ Transaction is like a tranfering a amount from one account to another account.or we can say that withdraw deposit process in a bank is also known
+ transaction.
+ 
+ Transaction access data using read and write operations.if a transaction is failed with some technical error or by fault then it should not be
+ restarted.
+ 
+ Transaction processing context Atomicity,Consistency,Isolation,Durability.
+ 
+ Transaction refers to the single logical units of works that access and modify the contents presents in a given databases.
+ 
+ ACID PROPERTIES:
+ Atomicity:-The entire transaction takes place at once or does not happen at all.
+ 
+ Consistency:The Database must be consistent before and after the transaction hapeens.
+ 
+ Isolation:Multiple transaction occurs independently without intereferences.
+ 
+ Durability:The changes of a succesful transaction occures even idf the system fails to acv=hieve the results.\
+ 
+ if we perform any DML operation on a table inside that area that operations be partially commited.and anytime we can roll back.
+ but once we do commit than we can;t rollback.
+ 

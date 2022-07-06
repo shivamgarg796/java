@@ -1,0 +1,30 @@
+create table Movei(id int,title varchar(15),Director varchar(20),year varchar(4),length_minutes int);
+
+insert into Movei values(1, 'Toy Story', 'John Lasseter', '1995', 81);
+insert into Movei values(2, 'A Bug' 's Life', 'John Lasseter', '1998', 95);
+insert into Movei values(3, 'Toy Story 2', 'John Lasseter', '1999', 93);
+insert into Movei values(4, 'Monsters, Inc.', 'Pete Docter', '2001', 92);
+insert into Movei values(5, 'Civil War', 'Andrew Stanton', '2003', 107);
+insert into Movei values(6, 'The Incredibles', 'Brad Bird', '2004', 116);
+
+
+create table Movei_Rating(movie_id int, rating float(2,1), domestic_sales bigint(9), international_sales bigint(9));
+insert into Movei_Rating values(5 ,8.2, 380843261, 555900000);
+insert into Movei_Rating values(1, 7.4, 268492764, 475066843);
+insert into Movei_Rating values(3, 8,   206445654, 417277164);
+insert into Movei_Rating values(2, 6.4, 191452396, 368400000);
+insert into Movei_Rating values(4, 7.9, 245852179, 239163000);
+insert into Movei_Rating values(6. 8,   261441092, 370001000);
+
+
+SELECT title, domestic_sales, international_sales
+FROM movei
+INNER JOIN Movei_rating
+ON movei.id = Movei_rating.movie_id
+WHERE international_sales > domestic_sales;
+
+SELECT title, rating
+FROM movei
+INNER JOIN Movei_rating
+ON movei.id = Movei_rating.movie_id
+ORDER BY rating DESC;

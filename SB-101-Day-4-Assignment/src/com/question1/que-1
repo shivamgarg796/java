@@ -1,0 +1,9 @@
+ create table city(ID int,NAME varchar(12),COUNTRYCODE varchar(3),DISTRICT varchar(20),POPULATION int);
+ show tables;
+ desc city;
+ insert into city values(3878,'Scottsdale','USA','Arizona',202705); 
+ insert into city values(3965,'Corona','USA','California',90000); 
+ insert into city values(3973,'Concord','USA','California',121780); 
+ insert into city values(3977,'Ceder Rapids','USA','Lowa',120758);
+ insert into city values(3982,'CoralSprings','USA','Florida',87456);
+ select * from city where POPULATION > 100000;   

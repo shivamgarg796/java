@@ -1,0 +1,12 @@
+create table Person(personid int primary key,lastName varchar(15),firstName varchar(15)); 
+insert into person values(1,'Wang','Allen');
+insert into person values(2,'Alice','Bob');
+
+create table Address(addressId int,personId int,city varchar(15),state varchar(15)); 
+insert into Address values(1,2,'New York City','New York');
+insert into Address values(2,3,'San Diego','California');
+
+select firstName,lastName from Person Left join Address on person.personId=address.personId;
+
+
+

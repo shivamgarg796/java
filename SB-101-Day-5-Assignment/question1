@@ -1,0 +1,69 @@
+question 1:
+
+create table students(S_ID varchar(2) , S_NAME VARCHAR(15), S_ADDRESS VARCHAR(15), S_PHONE VARCHAR(10),S_AGE INT); 
+INSERT INTO STUDENTS VALUES('S1','RAM', 'DELHI', '9455123451', 18);
+INSERT INTO STUDENTS VALUES('S2','RAMESH', 'GURGAON', '9652431543', 18);
+INSERT INTO STUDENTS VALUES('S3','SUJIT', 'CHANDIGARH', '9156253131', 20);
+INSERT INTO STUDENTS VALUES('S4','SURESH', 'DELHI', '9156768971', 18);
+INSERT INTO STUDENTS VALUES('S5','RATAN', 'DELHI', '9567890876', 20);
+
+CREATE TABLE COURSE(C_ID VARCHAR(2), C_NAME VARCHAR(10));
+INSERT INTO COURSE VALUES('C1','DSA');
+INSERT INTO COURSE VALUES('C2','JAVA');
+INSERT INTO COURSE VALUES('C3','MERN');
+
+CREATE TABLE STUDENT_COURSE(S_ID varchar(2),C_ID VARCHAR(2));
+Query OK, 1 row affected (0.01 sec)                                                                                                                                                                             mysql> insert student_course values('S1','C3');                                                                                                                                                                                                                                      mysql> insert student_course values('S2','C1');                                                                                                                                                                                                                                      mysql> insert student_course values('S3','C2');                                                                                                                                                                                                                                     mysql> insert student_course values('S4','C2');                                                                                                                                                                                                                                     mysql> insert student_course values('S4','C3');                                                                                                                                                                                                                                      mysql> insert student_course values('S5','C2');                                                         
+
+SELECT * FROM STUDENTS WHERE S_ADDRESS='DELHI' AND S_ID IN(SELECT S_ID FROM STUDENT_COURSE WHERE C_ID IN(SELECT C_ID FROM COURSE WHERE 
+C_NAME='JAVA'));
+
+
+
+question 2:
+
+create table Movei(id int,title varchar(15),Director varchar(20),year varchar(4),length_minutes int);
+
+insert into Movei values(1, 'Toy Story', 'John Lasseter', '1995', 81);
+insert into Movei values(2, 'A Bug' 's Life', 'John Lasseter', '1998', 95);
+insert into Movei values(3, 'Toy Story 2', 'John Lasseter', '1999', 93);
+insert into Movei values(4, 'Monsters, Inc.', 'Pete Docter', '2001', 92);
+insert into Movei values(5, 'Civil War', 'Andrew Stanton', '2003', 107);
+insert into Movei values(6, 'The Incredibles', 'Brad Bird', '2004', 116);
+
+
+create table Movei_Rating(movie_id int, rating float(2,1), domestic_sales bigint(9), international_sales bigint(9));
+insert into Movei_Rating values(5 ,8.2, 380843261, 555900000);
+insert into Movei_Rating values(1, 7.4, 268492764, 475066843);
+insert into Movei_Rating values(3, 8,   206445654, 417277164);
+insert into Movei_Rating values(2, 6.4, 191452396, 368400000);
+insert into Movei_Rating values(4, 7.9, 245852179, 239163000);
+insert into Movei_Rating values(6. 8,   261441092, 370001000);
+
+
+SELECT title, domestic_sales, international_sales
+FROM movei
+INNER JOIN Movei_rating
+ON movei.id = Movei_rating.movie_id
+WHERE international_sales > domestic_sales;
+
+SELECT title, rating
+FROM movei
+INNER JOIN Movei_rating
+ON movei.id = Movei_rating.movie_id
+ORDER BY rating DESC;
+
+question 4:
+
+create table Person(personid int primary key,lastName varchar(15),firstName varchar(15)); 
+insert into person values(1,'Wang','Allen');
+insert into person values(2,'Alice','Bob');
+
+create table Address(addressId int,personId int,city varchar(15),state varchar(15)); 
+insert into Address values(1,2,'New York City','New York');
+insert into Address values(2,3,'San Diego','California');
+
+select firstName,lastName from Person Left join Address on person.personId=address.personId;
+
+
+

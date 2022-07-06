@@ -1,0 +1,36 @@
+a) What is normalization and why is it needed?
+
+Answer:-Normalization is a process of organizing the data in databases and refining the table to avoid the duplication of data,inconsistency
+and redundancy.Because of redundancy there are various problems creates in database.
+
+Nomalization is a part of Data definition language (DDL).Redundancy is when same data is repeated and stored multiples times in the database 
+unnecessarily.Redundancy occurs when we try to keep all th data in the single table. 
+
+To solve the problem of data redundancy and inconsistency we need to decomposing the table into multiple related tables. In normalization we 
+split a big table into multiple tables should contains a single field related data only.
+
+with the help of normalization we can refine a big table into multiple taables.
+
+
+b) What is the 2NF? Explain with an example. You don’t need to draw the
+tables or write the queries. Just mention the schema before and after the
+third normal form. 
+
+Answer:-2Nf is stands for second normalise for where we can acieved a table in decomposing form but we can not say that with the 2NF we can 
+get 100% data inconsistency problem solve.
+
+to understand 2NF we need to understand following concepts:
+1.Functional dependency
+2.super key
+3.candidate key
+5.non prime attribute
+4.prime attribute
+
+A table with a single column Primary key is automatically in 2NF.
+TO BE in 2Nf a table must be in 1 NF and the table must not contains partial dependencies.
+The normalisation of 1Nf tabLE To 2nf involves the removal of partial dependencies ,if any partial dependencies exists, we remove it from table.
+
+for example: -if  a table of students contains colums like roll , courseid , fees than in this all the details of student repeated again and again
+we can't find uniquely particular student on the basis of the data given.because the fees is depend on the courseid whih is partial dependencies
+
+to solve the above scenario we can divide the table into two or more table and so on we need.
