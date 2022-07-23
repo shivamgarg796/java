@@ -1,0 +1,16 @@
+Explain the difference between execute(), executeQuery() and executeUpdate() methods in JDBC.
+Answer:-
+
+execute():--
+This method can be used any type of SQL statements like DDL,DML,DRL,DCL.
+this method return boolean type of value.
+
+executeQuery():--
+This method can be used only for DRL operations.
+it executes only select statements.
+it returns resultset object.
+
+executeUpdate():--
+This method can be use only for DML operations.
+it is used for update,delete,insert operations.
+this method return int type of value.

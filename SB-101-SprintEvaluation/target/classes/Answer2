@@ -1,0 +1,34 @@
+● Explain @Cascade and @mappedBy annotations:
+● What is ORM in Hibernate?
+
+Answer:-A
+
+@Cascade :-It is the annotation in hybernate ORM, when we perform some operations on the entity class with the help of this the same action 
+will be apply to the asscociated entity of that class.
+
+Cascade Type:
+#ALL
+#REMOVE  
+
+
+@mappedBy :-This annotation is used to make this asscociation bidirectional,we have to define the referencing side. The reference side simply
+maps to the owning side then we can use mappedBy annotation attribute with @OneToMany annotation.with this we established a bidirectional 
+association between one entity and other asscociates. 
+
+
+
+Answer :-B
+
+ORM stands for object Relational mapping is a paradigm to convert data between relational database and object orinted programing languages.
+
+when we work with an object oriented system ,there is a many mismatch between the object model and relational database model.
+
+#granularity mismatch :- HAS-A relationship problem
+
+#Inheritence mismatch :- IS-A relationship problem
+
+#Association Mismatch :- Table relationship problem
+
+With the use of hybernate software framework we can easily write applications whose data outlives the application process.
+
+As an ORM framework,hybernate is concerned with data JPA as it applies to relational database via java database connectivity.

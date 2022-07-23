@@ -1,0 +1,18 @@
+Explain the difference between Statement and Prepared Statements.
+
+Answer:--
+
+Statement:---
+Statement is a Interface used to execute string based SQL queries.
+it accepts strings as Sql queries. by the use of this the code become less readable.
+
+Syntax:-
+Statement s=conn.createStatement();
+
+PreparedStatement:---
+PreparedStatement is a interface used to execute parameterized SQL queries.
+it has methods to bind various objects.by the use of this the code becomes more understandable.
+
+sysntax:--
+
+PreparedStatement ps=conn.prepareStatement("sql query");

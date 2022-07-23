@@ -1,0 +1,42 @@
+● Explain difference between JPA and Hibernate:
+● Explain Layered Architecture:
+
+Answer 1:--
+JPA :JPA stands for Java Persistence API.
+
+#It is open source specicification given by sun microsystem but now it is acquired by oracle corporation.
+
+#It is used to develop ORM based softwares.
+
+#It provides a standard API to Work with any kind of softwares.
+
+#It is belong from javax.persistence package.
+
+Hybernate :It is ORM based software frameworks.
+
+#it is the implementation of JPA.
+
+#Hybernate provides our own API to develop ORM softwares
+
+#if we use hybernate specific Api then next day if we want to transfer our data in any other ORM based software we can not
+do that.
+
+#All the other software are made base upon the specification of JPA only.  
+
+
+Answer 2:--
+Layer architecture is a methodology we can understand by the following  in three steps:-
+
+#Maintaing and Storing the business data in secure and easily retreival mannner.
+
+#Processing the data according to our business rule.
+
+#presenting the data to the user in user understandable format by using Servlet, JSP ,JSF.
+
+There are three partition to understand more about Layer architecture:-
+
+Presentaion Layer:-It is a set of java classes which are responsible for generating user input/output screen.
+
+Business logic layer:-it is also a collection of java classes in which we can represent the business logics.
+
+Data Access Layer:-it is also a bundle of classes in which we can perform the CRUD operation INSERT,UPDATE,DELETE.  

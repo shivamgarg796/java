@@ -1,0 +1,10 @@
+What is lazy loading and eager loading in hibernate?
+
+Answer:---By default ORM software perform lazy loading while fetching the objs.
+
+# when we fetch the parent object,then only the first level object related data will be loaded into the memory,
+but the second level  object related data will be loaded at time of calling the Second level object related methods. it is known as lazy
+loading.
+
+but if we want the second level object related data will be loaded at the time of when first level object will loaded into the memory 
+then we have to use "@ElementCollection(fetch=FetchType.EAGER" annotation to acheive Eager loading.This is known as eager loading.

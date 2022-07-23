@@ -22,6 +22,7 @@ public class Mobile {
 		
 		Mobile m=new Mobile();
 		
+		
 		m.searchOutdatedModel("Redmi","note8","note4","note9","note6");
 	}
 }
