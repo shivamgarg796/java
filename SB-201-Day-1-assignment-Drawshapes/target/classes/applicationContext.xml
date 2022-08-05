@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="t" class="com.masai.Triangle" />
+	<bean id="c" class="com.masai.Circle" />
+	<bean id="c1" class="com.masai.Cylinder" />
+
+	<bean id="r" class="com.masai.Runner">
+
+		<!-- <property name="s" ref="t" /> -->
+		<!-- <property name="s" ref="c" /> -->
+		<!-- <property name="s" ref="c1" /> -->
+		
+<!-- 		<constructor-arg name="s" ref="t" /> -->
+<!-- 		<constructor-arg name="s" ref="c" /> -->
+
+		<constructor-arg name="s" ref="c1" />
+
+
+	</bean>
+
+
+
+
+
+
+</beans>

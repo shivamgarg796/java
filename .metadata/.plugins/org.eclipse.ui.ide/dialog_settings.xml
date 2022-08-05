@@ -13,6 +13,8 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="E:\New folder (4)\Project-E-Commerce-master"/>
+			<item value="D:\E-Commerce-Application"/>
 			<item value="D:\ja111-Ec"/>
 		</list>
 	</section>
